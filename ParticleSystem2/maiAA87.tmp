@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3mjo04gljl3x"]
+
+[ext_resource type="Script" path="res://FluidSimulation.cs" id="1_v0ojl"]
+[ext_resource type="Script" path="res://smoothingradiusslider.gd" id="2_54iaa"]
+[ext_resource type="Script" path="res://Node2D.gd" id="3_oceo3"]
+[ext_resource type="Script" path="res://info.gd" id="4_eewqw"]
+[ext_resource type="Script" path="res://restdensityslider.gd" id="4_iloam"]
+[ext_resource type="Script" path="res://gravityslider.gd" id="5_3pf34"]
+[ext_resource type="Script" path="res://pressuremultiplierslider.gd" id="6_k6mgc"]
+[ext_resource type="Script" path="res://particlemassslider.gd" id="7_nej1t"]
+[ext_resource type="Script" path="res://deltafactorslider.gd" id="8_ijs2a"]
+[ext_resource type="Script" path="res://addparticlebutton.gd" id="9_rkfa3"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_v0ojl")
+
+[node name="Information" type="Node2D" parent="."]
+
+[node name="smoothingradiusslider" type="HSlider" parent="Information"]
+offset_left = 516.0
+offset_top = 81.0
+offset_right = 775.0
+offset_bottom = 97.0
+max_value = 200.0
+script = ExtResource("2_54iaa")
+
+[node name="Label" type="Label" parent="Information/smoothingradiusslider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.5
+anchor_bottom = 0.719
+offset_left = 2.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -19.504
+text = "asd"
+
+[node name="Circle" type="Node2D" parent="Information/smoothingradiusslider"]
+position = Vector2(-492, -79)
+script = ExtResource("3_oceo3")
+
+[node name="restdensityslider" type="HSlider" parent="Information"]
+offset_left = 517.0
+offset_top = 126.0
+offset_right = 776.0
+offset_bottom = 142.0
+max_value = 5.0
+step = 0.0
+script = ExtResource("4_iloam")
+
+[node name="Label" type="Label" parent="Information/restdensityslider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.5
+anchor_bottom = 0.719
+offset_left = 2.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -19.504
+text = "asd"
+
+[node name="gravityslider" type="HSlider" parent="Information"]
+offset_left = 517.0
+offset_top = 169.0
+offset_right = 776.0
+offset_bottom = 185.0
+max_value = 10.0
+step = 0.1
+script = ExtResource("5_3pf34")
+
+[node name="Label" type="Label" parent="Information/gravityslider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.5
+anchor_bottom = 0.719
+offset_left = 2.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -19.504
+text = "asd"
+
+[node name="pressuremultiplierslider" type="HSlider" parent="Information"]
+offset_left = 517.0
+offset_top = 212.0
+offset_right = 776.0
+offset_bottom = 228.0
+script = ExtResource("6_k6mgc")
+
+[node name="Label" type="Label" parent="Information/pressuremultiplierslider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.5
+anchor_bottom = 0.719
+offset_left = 2.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -19.504
+text = "asd"
+
+[node name="particlemassslider" type="HSlider" parent="Information"]
+offset_left = 517.0
+offset_top = 256.0
+offset_right = 776.0
+offset_bottom = 272.0
+min_value = 1.0
+value = 1.0
+script = ExtResource("7_nej1t")
+
+[node name="Label" type="Label" parent="Information/particlemassslider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.5
+anchor_bottom = 0.719
+offset_left = 2.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -19.504
+text = "asd"
+
+[node name="deltafactorslider" type="HSlider" parent="Information"]
+offset_left = 517.0
+offset_top = 301.0
+offset_right = 776.0
+offset_bottom = 317.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+script = ExtResource("8_ijs2a")
+
+[node name="Label" type="Label" parent="Information/deltafactorslider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.5
+anchor_bottom = 0.719
+offset_left = 2.0
+offset_top = -31.0
+offset_right = 22.0
+offset_bottom = -19.504
+text = "asd"
+
+[node name="Label" type="Label" parent="Information"]
+offset_left = 789.0
+offset_top = 25.0
+offset_right = 829.0
+offset_bottom = 48.0
+script = ExtResource("4_eewqw")
+
+[node name="Line2D" type="Line2D" parent="Information/Label"]
+points = PackedVector2Array(-511, 105, -415, 99)
+width = 1.0
+
+[node name="addparticlebutton" type="Button" parent="Information"]
+offset_left = 519.0
+offset_top = 13.0
+offset_right = 619.0
+offset_bottom = 44.0
+text = "add particle"
+script = ExtResource("9_rkfa3")
